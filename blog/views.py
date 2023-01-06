@@ -14,7 +14,12 @@ def index(request):
     return render(request, 'blog/index.html', {"blogs": blogs})
 
 def posts(request):
-    pass
+    return render(request, 'blog/posts.html', {"blogs": blogs})
 
-def posts_detail(request):
-    pass
+def posts_detail(request, slug):
+    blog_name = slug
+    blog = blogs[slug]
+    return render(request, 'blog/post_detail.html', {
+        "blog": blog,
+        "blog_name": blog_name
+        })
