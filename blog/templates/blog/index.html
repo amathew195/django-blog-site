@@ -1,0 +1,14 @@
+
+{% block content %}
+
+<h1>Blogs!</h1>
+{% if not blogs %}
+<h2>There are no blogs to display!</h2>
+{% endif %}
+<ul>
+    {% for blog in blogs %}
+    <li>{{blog|title}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
